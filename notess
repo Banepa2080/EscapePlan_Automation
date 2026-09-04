@@ -1,0 +1,20 @@
+def test_view_client_building(page: Page) -> None:
+    login_page = LoginPage(page)
+    client_building_page = ClientBuildingPage(page)
+
+    page.context.grant_permissions(
+        ["local-network-access"],
+        origin="https://staging-v2-dash.escapeplan.ie",
+    )
+    page.goto("https://staging-v2-dash.escapeplan.ie/login")
+    login_page.login("test@gmail.com", "test@123")
+
+    expect(page).to_have_url(re.compile(r".*/(?:dashboard|create-jobs)/?$"))
+    client_building_page.open_buildings()
+    client_building_page.open_building("Automated building name")
+
+    # The selected building name should be displayed on its single-detail view.
+    expect(page.get_by_text("Automated building name", exact=False).first).to_be_visible()
+    # hold(page)
+
+

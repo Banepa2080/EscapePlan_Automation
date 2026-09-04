@@ -1,0 +1,90 @@
+A)
+if show  PS D:\Python n Playwright Project\Projects\EscapePlan_Automation>  
+   then
+    PS D:\Python n Playwright Project\Projects\EscapePlan_Automation> .\venv1\Scripts\activate  OR to deactivate type "deactivate" 
+   then it will be 
+    (venv1) PS D:\Python n Playwright Project\Projects\EscapePlan_Automation> 
+
+
+
+B)
+hints: pytest .\tests\test_google.py --headed to see running browser
+hints: pytest .\tests\test_google.py --browser=chromium/firefox/webkit --headed/headless ---------->to see running browser
+
+C)
+Capture Screenshots --screenshot=on   off (default)
+                                      on
+                                      only-on-failure
+            hints: pytest .\tests\test_google.py --browser=chromium/firefox/webkit --headed/headless  --screenshot=on 
+
+D)                           
+Record Video --video=on     off (default)
+                            On-first-retry
+                            Retain-on-failure  
+            hints: pytest .\tests\test_google.py --browser=chromium/firefox/webkit --headed/headless  --video=on 
+
+E)
+// to see html report :---->pip install pytest-html
+ pytest .\tests\test_google.py --browser=chromium/firefox/webkit --headed/headless  --video=on --html=report.html 
+
+
+
+
+F)
+// //Hint about "fixture": 
+a fixture is a reusable piece of code that sets something up before a test runs and can clean it up afterward
+
+import pytest
+from playwright.sync_api import sync_playwright
+
+Fi) 
+@pytest.fixture(scope="session")
+def  browser():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)  # set headless=True if you don't want to see the browser window
+        yield browser
+        browser.close()
+hints: here the fixture browser
+- Starts the browser(chromium) once per session
+- yield lets the test use the browser
+- After tests are done, browser is close
+
+Fii)
+@pytest.fixture
+def page(browser):
+    page = browser.new_page()
+    yield page
+    page.close()
+Hints : the fixture page
+- Uses the browser fixture
+- Creates a new browser page for each test
+- yield page gives the test a fresh tab
+- After test, it closes the tab
+
+
+G)create a  requirements.txt so other can install your packages easily 
+---->   pip freeze > requirements.txt
+Now in new Project we can use this file to install everything pip install -r requirements.txt
+
+
+
+H)
+to record video/code :- playwright codegen <--->to insatall
+then in termainal : playwright codegen https://www.esaceplan.com
+
+I) to use Trace Viewer (comment conftest.py to save trace.zip OR test-results)
+=> run tests using the flag   --tracing,   example: pytest --tracing=on OR  pytest '.\tests/test_esacpePlan_login.py' --tracing=on 
+=======> this will record the trace and place it into the file named trace.zip in your test-results directory 
+on    : Record trace for each test
+off   : Don ot record trace (default)
+retain-on-failure : Record trace for each test, but remove all traces from successful test runs
+
+=> check the trace.zip file is created
+=> open the trace using :- playwright show-trace trace.zip OR playwright show-trace .\test-results\tests-test-escapeplan-dashboard-py-test-dashboard-step-wise-chromium\trace.zip
+                        :- can open in trace.playwright.dev   
+
+
+
+J) 
+==> to run slowly ie=> --slowmo=500
+PS D:\Python n Playwright Project\Projects\EscapePlan_Automation> pytest '.\tests\test_escapePlan_arrayUser_login.py' --slowmo=500
