@@ -6,6 +6,7 @@ from pages.admin.escapePlan_dashboard_admin_create_users_page import (
 )
 
 from pages.admin.escapePlan_admin_login_page import LoginPage
+from utils.browser_cleanup import clear_browser_data
 
 
 HOLD_MS = 10_000
@@ -19,7 +20,10 @@ def test_admin_can_create_user(page: Page) -> None:
     login_page = LoginPage(page)
     user_page = AdminCreateUserPage(page)
 
- # Grant permission
+    # Clear old browser data
+    clear_browser_data(page)
+
+    # Grant permission
     page.context.grant_permissions(
         ["local-network-access"],
         origin="https://staging-v2-admin.escapeplan.ie",
@@ -50,11 +54,11 @@ def test_admin_can_create_user(page: Page) -> None:
 
     user_page.create_user(
         name="full name test",
-        email="devproject2080+1@gmail.com",
+        email="devproject20800@gmail.com",
         password="Test@123",
         confirm_password="Test@123",
-        # role="TECHNICIAN",
-        role="CLIENT",
+        role="TECHNICIAN",
+        # role="CLIENT",
     )
 
 
@@ -62,3 +66,4 @@ def test_admin_can_create_user(page: Page) -> None:
     # Keep browser open for 10 seconds
     hold(page)
             
+

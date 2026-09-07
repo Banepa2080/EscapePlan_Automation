@@ -1,0 +1,1 @@
+{"uuid": "0a1abee0-1f7a-458b-93c6-df6fe342f3a5", "children": ["1b4b36e8-3b0d-4e94-8134-e6f3a965bc74"], "befores": [{"name": "connect_options", "status": "passed", "start": 1788777262663, "stop": 1788777262663}], "afters": [{"name": "connect_options::<lambda>", "start": 1788777271703}], "start": 1788777262663, "stop": 1788777271703}

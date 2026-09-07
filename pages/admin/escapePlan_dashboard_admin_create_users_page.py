@@ -102,3 +102,6 @@ class AdminCreateUserPage:
         self.enter_confirm_password(confirm_password)
         self.select_role(role)
         self.click_create_user()
+
+
+

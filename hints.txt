@@ -26,7 +26,8 @@ Record Video --video=on     off (default)
 E)
 // to see html report :---->pip install pytest-html
  pytest .\tests\test_google.py --browser=chromium/firefox/webkit --headed/headless  --video=on --html=report.html 
-
+                    OR
+ pytest .\test/test_google.py --html="report_$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss').html" --self-contained-html --capture=tee-sys
 
 
 
