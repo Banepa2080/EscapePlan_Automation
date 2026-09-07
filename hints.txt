@@ -88,3 +88,18 @@ retain-on-failure : Record trace for each test, but remove all traces from succe
 J) 
 ==> to run slowly ie=> --slowmo=500
 PS D:\Python n Playwright Project\Projects\EscapePlan_Automation> pytest '.\tests\test_escapePlan_arrayUser_login.py' --slowmo=500
+
+
+
+K)--to install allure report :-
+    pip install allure-pytest
+
+---to view/generate report (one Time/Run Time report):- 
+allure serve ./reports/EscapePlan_Allure_Report
+    OR
+allure serve reports/EscapePlan_Allure_Report
+
+---to view/generate report (Permanent report):- 
+allure generate ./reports/EscapePlan_Allure_Report -o ./reports/EscapePlan_Allure_Report --clean 
+    OR
+allure generate reports/EscapePlan_Allure_Report -o reports/EscapePlan_Allure_Report --clean ;(clean :- to remove old results) 
