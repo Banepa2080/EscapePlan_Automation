@@ -52,6 +52,7 @@ def test_admin_can_create_user(page: Page) -> None:
         name="full name test",
         email="devproject2080+1@gmail.com",
         password="Test@123",
+        confirm_password="Test@123",
         # role="TECHNICIAN",
         role="CLIENT",
     )
