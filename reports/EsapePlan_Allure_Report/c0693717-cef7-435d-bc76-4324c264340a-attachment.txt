@@ -1,0 +1,21 @@
+LOGIN SUCCESS
+
+========== API ERROR ==========
+STATUS : 409
+METHOD : POST
+URL    : https://api-escapeplan-v2.intosoft.com/api/v2/auth/user-create-by-admin
+REQUEST HEADERS : {':authority': 'api-escapeplan-v2.intosoft.com', ':method': 'POST', ':path': '/api/v2/auth/user-create-by-admin', ':scheme': 'https', 'accept': 'application/json, text/plain, */*', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNmE3OTQ4NmFlNTE1MTdmMGJjOGU3MDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzg4Nzc5MDIwLCJleHAiOjE3ODkzODM4MjB9.4t3Urulyyaen4u1N7Xsb5zmg-W1r2ufmeuSlkRlQ-dA', 'content-length': '113', 'content-type': 'application/json', 'origin': 'https://staging-v2-admin.escapeplan.ie', 'priority': 'u=1, i', 'referer': 'https://staging-v2-admin.escapeplan.ie/', 'sec-ch-ua': '"Chromium";v="151", "Not=A?Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'}
+RESPONSE BODY   : {"status":"error","message":"Email already registered"}
+================================
+
+LOGIN SUCCESS
+
+========== API ERROR ==========
+STATUS : 409
+METHOD : POST
+URL    : https://api-escapeplan-v2.intosoft.com/api/v2/auth/user-create-by-admin
+REQUEST HEADERS : {':authority': 'api-escapeplan-v2.intosoft.com', ':method': 'POST', ':path': '/api/v2/auth/user-create-by-admin', ':scheme': 'https', 'accept': 'application/json, text/plain, */*', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNmE3OTQ4NmFlNTE1MTdmMGJjOGU3MDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzg4Nzc5MDM5LCJleHAiOjE3ODkzODM4Mzl9.TMHVMiZ_S1dCddhYgy0XrNULxCLI682Dz5pGikG44cc', 'content-length': '113', 'content-type': 'application/json', 'origin': 'https://staging-v2-admin.escapeplan.ie', 'priority': 'u=1, i', 'referer': 'https://staging-v2-admin.escapeplan.ie/', 'sec-ch-ua': '"Chromium";v="151", "Not=A?Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'}
+RESPONSE BODY   : {"status":"error","message":"Email already registered"}
+================================
+
+API RESPONSE: 409 https://api-escapeplan-v2.intosoft.com/api/v2/auth/user-create-by-admin
