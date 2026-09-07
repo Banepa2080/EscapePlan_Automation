@@ -48,6 +48,11 @@ class AdminCreateUserPage:
             name="Minimum 8 characters"
         )
 
+        self.confirm_password_input = page.get_by_role(
+            "textbox",
+            name="Re-enter your password"
+        )
+
         self.role_select = page.locator("form").get_by_role(
             "combobox"
         )
@@ -72,6 +77,9 @@ class AdminCreateUserPage:
     def enter_password(self, password: str) -> None:
         self.password_input.fill(password)
 
+    def enter_confirm_password(self, confirm_password: str) -> None:
+        self.confirm_password_input.fill(confirm_password)
+
     def select_role(self, role: str) -> None:
         self.role_select.select_option(role)
 
@@ -83,6 +91,7 @@ class AdminCreateUserPage:
         name: str,
         email: str,
         password: str,
+        confirm_password: str,
         role: str,
     ) -> None:
         self.click_users()
@@ -90,5 +99,6 @@ class AdminCreateUserPage:
         self.enter_name(name)
         self.enter_email(email)
         self.enter_password(password)
+        self.enter_confirm_password(confirm_password)
         self.select_role(role)
         self.click_create_user()
